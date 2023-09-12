@@ -5,15 +5,14 @@ aux = expressao
 
 expressao = expressao.split()
 
-
-
 a = 0
 b = 0
 c = 0
 
-if '+' not in expressao[0] and expressao[0] != '-':
+if expressao[0] != '+' and expressao[0] != '-':
     expressao.insert(0, '+')
 
+print(expressao)
 for i in range(len(expressao)):
 
     try:
@@ -21,7 +20,7 @@ for i in range(len(expressao)):
 
             a += int(f"{expressao[i-1]}{int(expressao[i].split('x**2')[0])}")
             expressao.pop(i-1)
-
+            
         elif expressao[i].count('x') and expressao[i].count('x**2') is not True:
 
             b += int(f"{expressao[i-1]}{int(expressao[i].split('x')[0])}")
@@ -33,10 +32,10 @@ for i in range(len(expressao)):
 
     except:
         pass
-
+print(a)
 delta = b**2 - 4 * a * c
 raiz_delta = delta ** (1/2)
-
+print(delta)
 
 if raiz_delta > 0:
 
@@ -45,17 +44,20 @@ if raiz_delta > 0:
         raiz1 = (-b + raiz_delta) / (2 * a)
         raiz2 = (-b - raiz_delta) / (2 * a)
 
+        if raiz1 == -0.0:
+
+            raiz1 = 0.0
+
+        if raiz2 == -0.0:
+
+            raiz2 = 0.0
+
+
     except ZeroDivisionError:
 
         print(f'2 * {a} = 0 e não existe divisão por 0')
 
-    if raiz1 == -0.0:
-
-        raiz1 = 0.0
-
-    if raiz2 == -0.0:
-
-        raiz2 = 0.0
+    
 
     print(f"\nAs raízes de {aux} são:\n\nx' = {raiz1}\nx'' = {raiz2}")
 
@@ -65,15 +67,17 @@ elif raiz_delta == 0:
 
         raiz1 = (-b + raiz_delta) / (2 * a)
 
+        if raiz1 == -0.0:
+            raiz1 = 0.0
+
+        print(f"\nA raiz de {aux} são:\n\nx' = {raiz1}")
+
     except ZeroDivisionError:
 
         print(f'2 * {a} = 0 e não existe divisão por 0')
 
-    if raiz1 == -0.0:
 
-        raiz1 = 0.0
-
-    print(f"\nA raiz de {aux} são:\n\nx' = {raiz1}")
+    
 
 else:
 
