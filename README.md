@@ -1,5 +1,5 @@
 <div>
-  <h1>Resolver Equações do Segundo Grau</h1>
+  <h1>Resolver Equações do Segundo Grau (HÁ ERROS QUE ESTÃO SENDO CORRIGIDOS)</h1>
   <p>Projeto criado para resolver de forma eficiente as equações de segundo grau por meio de Bhaskara.</p>
 </div>
 <div>
